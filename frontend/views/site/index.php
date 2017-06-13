@@ -3,13 +3,15 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Maxim - Modern One Page Bootstrap Template';
+
+
 ?>
 
 <!-- Header area -->
 <div id="header-wrapper" class="header-slider">
     <header class="clearfix">
         <div class="logo">
-            <img src="<?=Yii::$app->request->baseUrl?>/frontend/web/img/logo-image.png" alt="" />
+            <img src="<?=$dist?>img/logo-image.png" alt="" />
         </div>
         <div class="container">
             <div class="row">
@@ -70,14 +72,14 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             </div>
             <div class="span6">
                 <div class="aligncenter">
-                    <img src="img/icons/creativity.png" alt="" />
+                    <img src="<?=$dist?>img/icons/creativity.png" alt="" />
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="span2 offset1 flyIn">
                 <div class="people">
-                    <img class="team-thumb img-circle" src="img/team/img-1.jpg" alt="" />
+                    <img class="team-thumb img-circle" src="<?=$dist?>img/team/img-1.jpg" alt="" />
                     <h3>John Doe</h3>
                     <p>
                         Art director
@@ -86,7 +88,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             </div>
             <div class="span2 flyIn">
                 <div class="people">
-                    <img class="team-thumb img-circle" src="img/team/img-2.jpg" alt="" />
+                    <img class="team-thumb img-circle" src="<?=$dist?>img/team/img-2.jpg" alt="" />
                     <h3>Mike Doe</h3>
                     <p>
                         Web developer
@@ -95,7 +97,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             </div>
             <div class="span2 flyIn">
                 <div class="people">
-                    <img class="team-thumb img-circle" src="img/team/img-3.jpg" alt="" />
+                    <img class="team-thumb img-circle" src="<?=$dist?>img/team/img-3.jpg" alt="" />
                     <h3>Neil Doe</h3>
                     <p>
                         Web designer
@@ -104,7 +106,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             </div>
             <div class="span2 flyIn">
                 <div class="people">
-                    <img class="team-thumb img-circle" src="img/team/img-4.jpg" alt="" />
+                    <img class="team-thumb img-circle" src="<?=$dist?>img/team/img-4.jpg" alt="" />
                     <h3>Mark Joe</h3>
                     <p>
                         UI designer
@@ -113,7 +115,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             </div>
             <div class="span2 flyIn">
                 <div class="people">
-                    <img class="team-thumb img-circle" src="img/team/img-5.jpg" alt="" />
+                    <img class="team-thumb img-circle" src="<?=$dist?>img/team/img-5.jpg" alt="" />
                     <h3>Stephen B</h3>
                     <p>
                         Digital imaging
@@ -133,7 +135,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
         <div class="row">
             <div class="span3 animated-fast flyIn">
                 <div class="service-box">
-                    <img src="img/icons/laptop.png" alt="" />
+                    <img src="<?=$dist?>img/icons/laptop.png" alt="" />
                     <h2>Web design</h2>
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -142,7 +144,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             </div>
             <div class="span3 animated flyIn">
                 <div class="service-box">
-                    <img src="img/icons/lab.png" alt="" />
+                    <img src="<?=$dist?>img/icons/lab.png" alt="" />
                     <h2>Web development</h2>
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -151,7 +153,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             </div>
             <div class="span3 animated-fast flyIn">
                 <div class="service-box">
-                    <img src="img/icons/camera.png" alt="" />
+                    <img src="<?=$dist?>img/icons/camera.png" alt="" />
                     <h2>Photography</h2>
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -160,7 +162,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             </div>
             <div class="span3 animated-slow flyIn">
                 <div class="service-box">
-                    <img src="img/icons/basket.png" alt="" />
+                    <img src="<?=$dist?>img/icons/basket.png" alt="" />
                     <h2>Ecommerce</h2>
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -204,8 +206,8 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                     <!-- portfolio item -->
                     <div class="portfolio-item grid print photography">
                         <div class="portfolio">
-                            <a href="img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="img/works/1.png" alt="" />
+                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                <img src="<?=$dist?>img/works/1.png" alt="" />
                                 <div class="portfolio-overlay">
                                     <div class="thumb-info">
                                         <h5>Portfolio name</h5>
@@ -219,8 +221,8 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                     <!-- portfolio item -->
                     <div class="portfolio-item grid print design web">
                         <div class="portfolio">
-                            <a href="img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="img/works/2.png" alt="" />
+                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                <img src="<?=$dist?>img/works/2.png" alt="" />
                                 <div class="portfolio-overlay">
                                     <div class="thumb-info">
                                         <h5>Portfolio name</h5>
@@ -234,8 +236,8 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                     <!-- portfolio item -->
                     <div class="portfolio-item grid print design">
                         <div class="portfolio">
-                            <a href="img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="img/works/3.png" alt="" />
+                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                <img src="<?=$dist?>img/works/3.png" alt="" />
                                 <div class="portfolio-overlay">
                                     <div class="thumb-info">
                                         <h5>Portfolio name</h5>
@@ -249,8 +251,8 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                     <!-- portfolio item -->
                     <div class="portfolio-item grid photography web">
                         <div class="portfolio">
-                            <a href="img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="img/works/4.png" alt="" />
+                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                <img src="<?=$dist?>img/works/4.png" alt="" />
                                 <div class="portfolio-overlay">
                                     <div class="thumb-info">
                                         <h5>Portfolio name</h5>
@@ -264,8 +266,8 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                     <!-- portfolio item -->
                     <div class="portfolio-item grid photography web">
                         <div class="portfolio">
-                            <a href="img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="img/works/5.png" alt="" />
+                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                <img src="<?=$dist?>img/works/5.png" alt="" />
                                 <div class="portfolio-overlay">
                                     <div class="thumb-info">
                                         <h5>Portfolio name</h5>
@@ -279,8 +281,8 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                     <!-- portfolio item -->
                     <div class="portfolio-item grid photography web">
                         <div class="portfolio">
-                            <a href="img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="img/works/6.png" alt="" />
+                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                <img src="<?=$dist?>img/works/6.png" alt="" />
                                 <div class="portfolio-overlay">
                                     <div class="thumb-info">
                                         <h5>Portfolio name</h5>
@@ -294,8 +296,8 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                     <!-- portfolio item -->
                     <div class="portfolio-item grid photography web">
                         <div class="portfolio">
-                            <a href="img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="img/works/7.png" alt="" />
+                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                <img src="<?=$dist?>img/works/7.png" alt="" />
                                 <div class="portfolio-overlay">
                                     <div class="thumb-info">
                                         <h5>Portfolio name</h5>
@@ -309,8 +311,8 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                     <!-- portfolio item -->
                     <div class="portfolio-item grid photography">
                         <div class="portfolio">
-                            <a href="img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="img/works/8.png" alt="" />
+                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                <img src="<?=$dist?>img/works/8.png" alt="" />
                                 <div class="portfolio-overlay">
                                     <div class="thumb-info">
                                         <h5>Portfolio name</h5>
@@ -324,8 +326,8 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                     <!-- portfolio item -->
                     <div class="portfolio-item grid photography web">
                         <div class="portfolio">
-                            <a href="img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="img/works/9.png" alt="" />
+                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                <img src="<?=$dist?>img/works/9.png" alt="" />
                                 <div class="portfolio-overlay">
                                     <div class="thumb-info">
                                         <h5>Portfolio name</h5>
@@ -339,8 +341,8 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                     <!-- portfolio item -->
                     <div class="portfolio-item grid design web">
                         <div class="portfolio">
-                            <a href="img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="img/works/10.png" alt="" />
+                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                <img src="<?=$dist?>img/works/10.png" alt="" />
                                 <div class="portfolio-overlay">
                                     <div class="thumb-info">
                                         <h5>Portfolio name</h5>
@@ -381,7 +383,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             <div class="span3">
                 <div class="home-post">
                     <div class="post-image">
-                        <img class="max-img" src="img/blog/img1.jpg" alt="" />
+                        <img class="max-img" src="<?=$dist?>img/blog/img1.jpg" alt="" />
                     </div>
                     <div class="post-meta">
                         <i class="icon-file icon-2x"></i>
@@ -400,7 +402,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             <div class="span3">
                 <div class="home-post">
                     <div class="post-image">
-                        <img class="max-img" src="img/blog/img2.jpg" alt="" />
+                        <img class="max-img" src="<?=$dist?>img/blog/img2.jpg" alt="" />
                     </div>
                     <div class="post-meta">
                         <i class="icon-file icon-2x"></i>
@@ -419,7 +421,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             <div class="span3">
                 <div class="home-post">
                     <div class="post-image">
-                        <img class="max-img" src="img/blog/img3.jpg" alt="" />
+                        <img class="max-img" src="<?=$dist?>img/blog/img3.jpg" alt="" />
                     </div>
                     <div class="post-meta">
                         <i class="icon-file icon-2x"></i>
@@ -438,7 +440,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             <div class="span3">
                 <div class="home-post">
                     <div class="post-image">
-                        <img class="max-img" src="img/blog/img4.jpg" alt="" />
+                        <img class="max-img" src="<?=$dist?>img/blog/img4.jpg" alt="" />
                     </div>
                     <div class="post-meta">
                         <i class="icon-file icon-2x"></i>
