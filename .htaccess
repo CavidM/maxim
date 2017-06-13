@@ -8,7 +8,7 @@
 #  RewriteRule ^admin$ backend/web/ [L]
 #</IfModule>
 #
-## Deny accessing below extensions  
+## Deny accessing below extensions
 #<Files ~ "(.json|.lock|.git)">
 #Order allow,deny
 #Deny from all
