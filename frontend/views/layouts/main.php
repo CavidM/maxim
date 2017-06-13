@@ -77,11 +77,11 @@ AppAsset::register($this);
                 <!-- navigation -->
                 <nav class="pull-right nav-collapse collapse">
                     <ul id="menu-main" class="nav">
-                        <li><a title="team" href="<?=Url::to(['/site/index/'])?>#about">About</a></li>
-                        <li><a title="services" href="<?=Url::to(['/site/index/'])?>#services">Services</a></li>
-                        <li><a title="works" href="<?=Url::to(['/site/index/'])?>#works">Works</a></li>
-                        <li><a title="blog" href="<?=Url::to(['/site/index/'])?>#blog">Blog</a></li>
-                        <li><a title="contact" href="<?=Url::to(['/site/index/'])?>#contact">Contact</a></li>
+                        <li><a title="team" href="/#about">About</a></li>
+                        <li><a title="services" href="/#services">Services</a></li>
+                        <li><a title="works" href="/#works">Works</a></li>
+                        <li><a title="blog" href="/#blog">Blog</a></li>
+                        <li><a title="contact" href="/#contact">Contact</a></li>
                         <li><a href="<?=Url::to(['/site/page/'])?>">Page</a></li>
                     </ul>
                 </nav>
