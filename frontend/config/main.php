@@ -6,14 +6,37 @@ $params = array_merge(
     require(__DIR__ . '/params-local.php')
 );
 
+use \yii\web\Request;
+$baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
+
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            //'suffix' => '.html',
+            'rules' => [],
+        ],
+        'assetManager' => [
+            'basePath' => '@webroot/assets',
+            'baseUrl' => '@web/assets'
+        ],
+
         'request' => [
             'csrfParam' => '_csrf-frontend',
+        ],
+        'request' => [
+            'baseUrl' => $baseUrl,
+        ],
+        'urlManager' => [
+            'baseUrl' => '/',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => []
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -36,14 +59,6 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
     ],
     'params' => $params,
 ];

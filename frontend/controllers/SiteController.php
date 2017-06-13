@@ -23,6 +23,8 @@ class SiteController extends Controller
      */
     public function behaviors()
     {
+//        print_r(yii::$app->controller->id.'<br>'.yii::$app->controller->action->id);
+
         return [
             'access' => [
                 'class' => AccessControl::className(),
