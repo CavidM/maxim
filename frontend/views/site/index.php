@@ -9,7 +9,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
 <div id="header-wrapper" class="header-slider">
     <header class="clearfix">
         <div class="logo">
-            <img src="img/logo-image.png" alt="" />
+            <img src="<?=yii::getAlias('@frontend')?>/web/img/logo-image.png" alt="" />
         </div>
         <div class="container">
             <div class="row">
