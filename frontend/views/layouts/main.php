@@ -82,7 +82,7 @@ AppAsset::register($this);
                         <li><a title="works" href="<?=Url::to(['/site/index/'])?>#works">Works</a></li>
                         <li><a title="blog" href="<?=Url::to(['/site/index/'])?>#blog">Blog</a></li>
                         <li><a title="contact" href="<?=Url::to(['/site/index/'])?>#contact">Contact</a></li>
-                        <li><a href="<?=Url::to(['/site/page/'])?>page">Page</a></li>
+                        <li><a href="<?=Url::to(['/site/page/'])?>">Page</a></li>
                     </ul>
                 </nav>
             </div>
