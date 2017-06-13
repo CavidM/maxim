@@ -1,8 +1,10 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\Team;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\VarDumper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -74,8 +76,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $team = new \backend\models\Team();
+
+        $team_arr = $team::find()->asArray()->all();
+
+        VarDumper::dump($team_arr);
+
         return $this->render('index',[
-            'dist' => Yii::$app->request->baseUrl.'/frontend/web/',
+            'dist' => Yii::$app->request->baseUrl.'/frontend/web/'
         ]);
     }
 

@@ -29,7 +29,7 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
-        'request' => [
+        /*'request' => [
             'baseUrl' => $baseUrl,
         ],
         'urlManager' => [
@@ -37,7 +37,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => []
-        ],
+        ],*/
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
