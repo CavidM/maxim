@@ -1,5 +1,9 @@
-Yii 2 Advanced Project Template
-===============================
+
+All dependencies and packages is already installed
+=====
+
+run only ```composer update```
+--
 
 Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
 developing complex Web applications with multiple tiers.
