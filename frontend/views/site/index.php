@@ -521,7 +521,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                 <h4 class="modal-title">Safaroff Agency</h4>
             </div>
             <div class="modal-body">
-                <h5>Create for `Safaroff Agency`&hellip;</h5>
+                <h5>Created for `Safaroff Agency`</h5>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
