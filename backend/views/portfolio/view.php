@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Team */
+/* @var $model backend\models\Portfolio */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Teams'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Portfolios'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="team-view">
+<div class="portfolio-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,16 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'profession',
-            [
-                'attribute' => 'image',
-                'format' => 'raw',
-                'value' => function($model) {
-
-                    return Html::img($model->memberImage, ['height' => 300]);
-                }
-            ],
-            'status',
+            'image',
+            'category_id',
         ],
     ]) ?>
 

@@ -11,6 +11,10 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use yii\helpers\Url;
 
+use backend\models\Pages;
+
+$pages = new Pages();
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -31,40 +35,6 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-
-    <?php
-    /*NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();*/
-    ?>
-
 <!-- navbar -->
 <div class="navbar-wrapper">
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -77,12 +47,13 @@ AppAsset::register($this);
                 <!-- navigation -->
                 <nav class="pull-right nav-collapse collapse">
                     <ul id="menu-main" class="nav">
-                        <li><a title="team" href="/#about">About</a></li>
-                        <li><a title="services" href="/#services">Services</a></li>
-                        <li><a title="works" href="/#works">Works</a></li>
-                        <li><a title="blog" href="/#blog">Blog</a></li>
-                        <li><a title="contact" href="/#contact">Contact</a></li>
-                        <li><a href="<?=Url::to(['/site/page/'])?>">Page</a></li>
+
+                        <?php foreach ($pages->pages as $k => $v): ?>
+
+                            <li data-key="<?=$v['id']?>"><a title="<?= $v['name'] ?>" href="<?=Url::to(['/'.$v["url"]])?>"><?= $v['name'] ?></a></li>
+
+                        <?php endforeach; ?>
+
                     </ul>
                 </nav>
             </div>

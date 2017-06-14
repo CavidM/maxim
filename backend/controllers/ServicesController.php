@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Team;
-use backend\models\TeamSearch;
+use backend\models\Services;
+use backend\models\ServiceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TeamController implements the CRUD actions for Team model.
+ * ServicesController implements the CRUD actions for Services model.
  */
-class TeamController extends Controller
+class ServicesController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +30,12 @@ class TeamController extends Controller
     }
 
     /**
-     * Lists all Team models.
+     * Lists all Services models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new TeamSearch();
+        $searchModel = new ServiceSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class TeamController extends Controller
     }
 
     /**
-     * Displays a single Team model.
+     * Displays a single Services model.
      * @param integer $id
      * @return mixed
      */
@@ -57,13 +57,13 @@ class TeamController extends Controller
     }
 
     /**
-     * Creates a new Team model.
+     * Creates a new Services model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Team();
+        $model = new Services();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -75,7 +75,7 @@ class TeamController extends Controller
     }
 
     /**
-     * Updates an existing Team model.
+     * Updates an existing Services model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -94,7 +94,7 @@ class TeamController extends Controller
     }
 
     /**
-     * Deletes an existing Team model.
+     * Deletes an existing Services model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -103,7 +103,7 @@ class TeamController extends Controller
     {
         $model = $this->findModel($id);
 
-        unlink(yii::getAlias('@root').'/uploads/team/'.$model->image);
+        unlink(yii::getAlias('@root').'/uploads/services/'.$model->image);
 
         $model->delete();
 
@@ -111,15 +111,15 @@ class TeamController extends Controller
     }
 
     /**
-     * Finds the Team model based on its primary key value.
+     * Finds the Services model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Team the loaded model
+     * @return Services the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Team::findOne($id)) !== null) {
+        if (($model = Services::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
