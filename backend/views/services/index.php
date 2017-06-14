@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\TeamSearch */
+/* @var $searchModel backend\models\ServiceSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('backend', 'Teams');
+$this->title = Yii::t('backend', 'Services');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="team-index">
+<div class="services-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('backend', 'Create Team'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('backend', 'Create Services'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'profession',
+            'description',
             [
                 'attribute' => 'image',
                 'format' => 'raw',

@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Team;
-use backend\models\TeamSearch;
+use backend\models\Pages;
+use backend\models\PagesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TeamController implements the CRUD actions for Team model.
+ * PagesController implements the CRUD actions for Pages model.
  */
-class TeamController extends Controller
+class PagesController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +30,12 @@ class TeamController extends Controller
     }
 
     /**
-     * Lists all Team models.
+     * Lists all Pages models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new TeamSearch();
+        $searchModel = new PagesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class TeamController extends Controller
     }
 
     /**
-     * Displays a single Team model.
+     * Displays a single Pages model.
      * @param integer $id
      * @return mixed
      */
@@ -57,13 +57,13 @@ class TeamController extends Controller
     }
 
     /**
-     * Creates a new Team model.
+     * Creates a new Pages model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Team();
+        $model = new Pages();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -75,7 +75,7 @@ class TeamController extends Controller
     }
 
     /**
-     * Updates an existing Team model.
+     * Updates an existing Pages model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -94,32 +94,28 @@ class TeamController extends Controller
     }
 
     /**
-     * Deletes an existing Team model.
+     * Deletes an existing Pages model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
      */
     public function actionDelete($id)
     {
-        $model = $this->findModel($id);
-
-        unlink(yii::getAlias('@root').'/uploads/team/'.$model->image);
-
-        $model->delete();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the Team model based on its primary key value.
+     * Finds the Pages model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Team the loaded model
+     * @return Pages the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Team::findOne($id)) !== null) {
+        if (($model = Pages::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
