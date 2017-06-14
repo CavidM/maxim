@@ -50,7 +50,7 @@ AppAsset::register($this);
 
                         <?php foreach ($pages->pages as $k => $v): ?>
 
-                            <li data-key="<?=$v['id']?>"><a title="<?= $v['name'] ?>" href="/<?= $v['url'] ?>"><?= $v['name'] ?></a></li>
+                            <li data-key="<?=$v['id']?>"><a title="<?= $v['name'] ?>" href="<?=Url::to(['/'.$v["url"]])?>"><?= $v['name'] ?></a></li>
 
                         <?php endforeach; ?>
 
