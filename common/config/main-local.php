@@ -3,8 +3,8 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-//            'dsn' => 'mysql:host=sql12.freemysqlhosting.net;dbname=sql12180018',
-            'dsn' => 'mysql:host=localhost;dbname=maxim',
+            'dsn' => 'mysql:host=sql12.freemysqlhosting.net;dbname=sql12180018',
+//            'dsn' => 'mysql:host=localhost;dbname=maxim',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
