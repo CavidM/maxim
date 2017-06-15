@@ -2,7 +2,7 @@
 
 # phpstorm project files
 .idea
-.idea/*
+.idea/
 
 # netbeans project files
 nbproject
