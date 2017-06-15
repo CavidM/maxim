@@ -97,8 +97,6 @@ class SiteController extends Controller
 
         $blog_arr = $blog::find()->where(['status' => Status::STATUS_ACTIVE])->limit(4)->asArray()->all();
 
-        VarDumper::dump($blog_arr);
-
         return $this->render('index',[
             'dist' => Yii::$app->request->baseUrl.'/frontend/web/',
             'uploads' => yii::$app->request->baseUrl.'/uploads/',
