@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use backend\models\Status;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\PagesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -27,7 +28,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'url:url',
-            'status',
+            [
+                'attribute' => 'status',
+                'label' => 'status',
+                'value' => function($model) {
+                    return ($model->status) ? yii::t('backend', 'active') : yii::t('backend', 'deleted');
+                },
+                'filter'=>[
+                    Status::STATUS_DELETED => yii::t('backend', 'deleted'),
+                    Status::STATUS_ACTIVE => yii::t('backend', 'active')
+                ],
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

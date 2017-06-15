@@ -54,6 +54,8 @@ AppAsset::register($this);
 
                         <?php endforeach; ?>
 
+                        <li ><a title="admin" href="<?=Url::to(['/admin'])?>"> Admin </a></li>
+
                     </ul>
                 </nav>
             </div>
