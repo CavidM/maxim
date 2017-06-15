@@ -26,8 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'image',
-            'category_id',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value' => function($model) {
+
+                    return Html::img($model->memberImage, ['height' => 80]);
+                }
+            ],
+            'category',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

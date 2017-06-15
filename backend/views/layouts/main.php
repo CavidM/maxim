@@ -42,6 +42,8 @@ AppAsset::register($this);
         ['label' => 'Services', 'url' => ['/services/index']],
         ['label' => 'Categories', 'url' => ['/category/index']],
         ['label' => 'Portfolio', 'url' => ['/portfolio/index']],
+        ['label' => 'Blog Category', 'url' => ['/blog-category/index']],
+        ['label' => 'Blog', 'url' => ['/blog/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

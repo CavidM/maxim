@@ -101,7 +101,11 @@ class PortfolioController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        unlink(yii::getAlias('@root').'/uploads/portfolio/'.$model->image);
+
+        $model->delete();
 
         return $this->redirect(['index']);
     }

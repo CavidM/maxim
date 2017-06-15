@@ -1,7 +1,10 @@
 <?php
 namespace frontend\controllers;
 
-use frontend\models\Team;
+use backend\models\Blog;
+use backend\models\Category;
+use backend\models\Portfolio;
+use backend\models\Services;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\helpers\VarDumper;
@@ -14,6 +17,8 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use backend\models\Status;
+use backend\models\Team;
 
 /**
  * Site controller
@@ -76,20 +81,53 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $team = new \backend\models\Team();
+        $team = new Team();
+        $services = new Services();
+        $categories = new Category();
+        $portfolio = new Portfolio();
+        $blog = new Blog();
 
-        $team_arr = $team::find()->asArray()->all();
+        $team_arr = $team::find()->where(['status' => Status::STATUS_ACTIVE])->limit(5)->asArray()->all();
 
-        VarDumper::dump($team_arr);
+        $services_arr = $services::find()->where(['status' => Status::STATUS_ACTIVE])->limit(4)->asArray()->all();
+
+        $categories_arr = $categories::find()->asArray()->all();
+
+        $portfolio_arr = $portfolio::find()->asArray()->all();
+
+        $blog_arr = $blog::find()->where(['status' => Status::STATUS_ACTIVE])->limit(4)->asArray()->all();
+
+        VarDumper::dump($blog_arr);
 
         return $this->render('index',[
-            'dist' => Yii::$app->request->baseUrl.'/frontend/web/'
+            'dist' => Yii::$app->request->baseUrl.'/frontend/web/',
+            'uploads' => yii::$app->request->baseUrl.'/uploads/',
+            'team' => $team_arr,
+            'services' => $services_arr,
+            'categories_arr' => $categories_arr,
+            'portfolio' => $portfolio_arr,
+            'blog' => $blog_arr,
         ]);
     }
 
     public function actionPage() {
 
         return $this->render('page');
+    }
+
+    public function actionMessage() {
+
+        $post = yii::$app->request->post();
+
+        Yii::$app->mailer->compose()
+            ->setFrom($post['email'])
+            ->setTo('cavid2409@gmail.com')
+            ->setSubject($post['subject'])
+            ->setTextBody($post['message'])
+            ->setHtmlBody($post['name'].' - '.$post['message'])
+            ->send();
+
+        return "OK";
     }
 
     /**

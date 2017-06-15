@@ -80,12 +80,14 @@ jQuery(document).ready(function($) {
 			else var str = $(this).serialize();		
 				$.ajax({
 				type: "POST",
-				url: "contact/contact.php",
+				url: "site/message",
 				data: str,
 				success: function(msg){
 			$("#sendmessage").addClass("show");
 			$("#errormessage").ajaxComplete(function(event, request, settings){
-		
+
+				console.dir(msg);
+
 			if(msg == 'OK')
 			{
 				$("#sendmessage").addClass("show");				
@@ -93,7 +95,7 @@ jQuery(document).ready(function($) {
 			else
 			{
 				$("#sendmessage").removeClass("show");
-				result = msg;
+				var result = msg;
 			}
 		
 			$(this).html(result);});}});

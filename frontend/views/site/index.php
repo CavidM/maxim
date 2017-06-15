@@ -77,51 +77,19 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             </div>
         </div>
         <div class="row">
-            <div class="span2 offset1 flyIn">
-                <div class="people">
-                    <img class="team-thumb img-circle" src="<?=$dist?>img/team/img-1.jpg" alt="" />
-                    <h3>John Doe</h3>
-                    <p>
-                        Art director
-                    </p>
+
+            <?php $x=0; foreach ($team as $k => $v):?>
+
+                <div class="span2 flyIn <?= ($x == 0) ? 'offset1': ''?>">
+                    <div class="people">
+                        <img class="team-thumb img-circle" src="<?= $uploads ?>/team/<?= $v['image'] ?>" alt="" />
+                        <h3><?= $v['name'] ?></h3>
+                        <p> <?= $v['profession'] ?> </p>
+                    </div>
                 </div>
-            </div>
-            <div class="span2 flyIn">
-                <div class="people">
-                    <img class="team-thumb img-circle" src="<?=$dist?>img/team/img-2.jpg" alt="" />
-                    <h3>Mike Doe</h3>
-                    <p>
-                        Web developer
-                    </p>
-                </div>
-            </div>
-            <div class="span2 flyIn">
-                <div class="people">
-                    <img class="team-thumb img-circle" src="<?=$dist?>img/team/img-3.jpg" alt="" />
-                    <h3>Neil Doe</h3>
-                    <p>
-                        Web designer
-                    </p>
-                </div>
-            </div>
-            <div class="span2 flyIn">
-                <div class="people">
-                    <img class="team-thumb img-circle" src="<?=$dist?>img/team/img-4.jpg" alt="" />
-                    <h3>Mark Joe</h3>
-                    <p>
-                        UI designer
-                    </p>
-                </div>
-            </div>
-            <div class="span2 flyIn">
-                <div class="people">
-                    <img class="team-thumb img-circle" src="<?=$dist?>img/team/img-5.jpg" alt="" />
-                    <h3>Stephen B</h3>
-                    <p>
-                        Digital imaging
-                    </p>
-                </div>
-            </div>
+
+            <?php $x++; endforeach; ?>
+
         </div>
     </div>
     <!-- /.container -->
@@ -133,42 +101,19 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
         <h4>Services</h4>
         <!-- Four columns -->
         <div class="row">
-            <div class="span3 animated-fast flyIn">
-                <div class="service-box">
-                    <img src="<?=$dist?>img/icons/laptop.png" alt="" />
-                    <h2>Web design</h2>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
+
+            <?php foreach ($services as $k => $v): ?>
+
+                <div class="span3 animated-slow flyIn">
+                    <div class="service-box">
+                        <img src="<?=$uploads?>/services/<?= $v['image'] ?>" alt="" />
+                        <h2><?= $v['name'] ?></h2>
+                        <p> <?= $v['description'] ?> </p>
+                    </div>
                 </div>
-            </div>
-            <div class="span3 animated flyIn">
-                <div class="service-box">
-                    <img src="<?=$dist?>img/icons/lab.png" alt="" />
-                    <h2>Web development</h2>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-            </div>
-            <div class="span3 animated-fast flyIn">
-                <div class="service-box">
-                    <img src="<?=$dist?>img/icons/camera.png" alt="" />
-                    <h2>Photography</h2>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-            </div>
-            <div class="span3 animated-slow flyIn">
-                <div class="service-box">
-                    <img src="<?=$dist?>img/icons/basket.png" alt="" />
-                    <h2>Ecommerce</h2>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-            </div>
+
+            <?php endforeach; ?>
+
         </div>
     </div>
 </section>
@@ -181,21 +126,17 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
         <div class="row">
             <div id="filters" class="span12">
                 <ul class="clearfix">
-                    <li><a href="#" data-filter="*" class="active">
-                            <h5>All</h5>
-                        </a></li>
-                    <li><a href="#" data-filter=".web">
-                            <h5>Web</h5>
-                        </a></li>
-                    <li><a href="#" data-filter=".print">
-                            <h5>Print</h5>
-                        </a></li>
-                    <li><a href="#" data-filter=".design">
-                            <h5>Design</h5>
-                        </a></li>
-                    <li><a href="#" data-filter=".photography">
-                            <h5>Photography</h5>
-                        </a></li>
+
+                    <?php foreach ($categories_arr as $k => $v): ?>
+
+                        <li>
+                            <a href="#" data-filter=".<?= $v['name'] ?>" class="active">
+                                <h5><?= $v['name'] ?></h5>
+                            </a>
+                        </li>
+
+                    <?php endforeach; ?>
+
                 </ul>
             </div>
             <!-- END PORTFOLIO FILTERING -->
@@ -204,155 +145,27 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
             <div class="span12">
                 <div id="portfolio-wrap">
                     <!-- portfolio item -->
-                    <div class="portfolio-item grid print photography">
-                        <div class="portfolio">
-                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="<?=$dist?>img/works/1.png" alt="" />
-                                <div class="portfolio-overlay">
-                                    <div class="thumb-info">
-                                        <h5>Portfolio name</h5>
-                                        <i class="icon-plus icon-2x"></i>
+
+                    <?php foreach ($portfolio as $k => $v): ?>
+
+                        <div class="portfolio-item grid print <?= str_replace(',', ' ', $v['category']) ?>">
+                            <div class="portfolio">
+                                <a href="<?=$uploads?>/portfolio/<?= $v['image'] ?>" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
+                                    <img src="<?=$uploads?>/portfolio/<?= $v['image'] ?>" alt="" />
+                                    <div class="portfolio-overlay">
+                                        <div class="thumb-info">
+                                            <h5><?= $v['name'] ?></h5>
+                                            <i class="icon-plus icon-2x"></i>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
+
+                    <?php endforeach; ?>
+
                     <!-- end portfolio item -->
-                    <!-- portfolio item -->
-                    <div class="portfolio-item grid print design web">
-                        <div class="portfolio">
-                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="<?=$dist?>img/works/2.png" alt="" />
-                                <div class="portfolio-overlay">
-                                    <div class="thumb-info">
-                                        <h5>Portfolio name</h5>
-                                        <i class="icon-plus icon-2x"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end portfolio item -->
-                    <!-- portfolio item -->
-                    <div class="portfolio-item grid print design">
-                        <div class="portfolio">
-                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="<?=$dist?>img/works/3.png" alt="" />
-                                <div class="portfolio-overlay">
-                                    <div class="thumb-info">
-                                        <h5>Portfolio name</h5>
-                                        <i class="icon-plus icon-2x"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end portfolio item -->
-                    <!-- portfolio item -->
-                    <div class="portfolio-item grid photography web">
-                        <div class="portfolio">
-                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="<?=$dist?>img/works/4.png" alt="" />
-                                <div class="portfolio-overlay">
-                                    <div class="thumb-info">
-                                        <h5>Portfolio name</h5>
-                                        <i class="icon-plus icon-2x"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end portfolio item -->
-                    <!-- portfolio item -->
-                    <div class="portfolio-item grid photography web">
-                        <div class="portfolio">
-                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="<?=$dist?>img/works/5.png" alt="" />
-                                <div class="portfolio-overlay">
-                                    <div class="thumb-info">
-                                        <h5>Portfolio name</h5>
-                                        <i class="icon-plus icon-2x"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end portfolio item -->
-                    <!-- portfolio item -->
-                    <div class="portfolio-item grid photography web">
-                        <div class="portfolio">
-                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="<?=$dist?>img/works/6.png" alt="" />
-                                <div class="portfolio-overlay">
-                                    <div class="thumb-info">
-                                        <h5>Portfolio name</h5>
-                                        <i class="icon-plus icon-2x"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end portfolio item -->
-                    <!-- portfolio item -->
-                    <div class="portfolio-item grid photography web">
-                        <div class="portfolio">
-                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="<?=$dist?>img/works/7.png" alt="" />
-                                <div class="portfolio-overlay">
-                                    <div class="thumb-info">
-                                        <h5>Portfolio name</h5>
-                                        <i class="icon-plus icon-2x"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end portfolio item -->
-                    <!-- portfolio item -->
-                    <div class="portfolio-item grid photography">
-                        <div class="portfolio">
-                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="<?=$dist?>img/works/8.png" alt="" />
-                                <div class="portfolio-overlay">
-                                    <div class="thumb-info">
-                                        <h5>Portfolio name</h5>
-                                        <i class="icon-plus icon-2x"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end portfolio item -->
-                    <!-- portfolio item -->
-                    <div class="portfolio-item grid photography web">
-                        <div class="portfolio">
-                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="<?=$dist?>img/works/9.png" alt="" />
-                                <div class="portfolio-overlay">
-                                    <div class="thumb-info">
-                                        <h5>Portfolio name</h5>
-                                        <i class="icon-plus icon-2x"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end portfolio item -->
-                    <!-- portfolio item -->
-                    <div class="portfolio-item grid design web">
-                        <div class="portfolio">
-                            <a href="<?=$dist?>img/works/big.jpg" data-pretty="prettyPhoto[gallery1]" class="portfolio-image">
-                                <img src="<?=$dist?>img/works/10.png" alt="" />
-                                <div class="portfolio-overlay">
-                                    <div class="thumb-info">
-                                        <h5>Portfolio name</h5>
-                                        <i class="icon-plus icon-2x"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end portfolio item -->
+
                 </div>
             </div>
         </div>
@@ -380,82 +193,31 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
         <h4>Our Blog</h4>
         <!-- Three columns -->
         <div class="row">
-            <div class="span3">
-                <div class="home-post">
-                    <div class="post-image">
-                        <img class="max-img" src="<?=$dist?>img/blog/img1.jpg" alt="" />
-                    </div>
-                    <div class="post-meta">
-                        <i class="icon-file icon-2x"></i>
-                        <span class="date">June 19, 2013</span>
-                        <span class="tags"><a href="#">Design</a>, <a href="#">Blog</a></span>
-                    </div>
-                    <div class="entry-content">
-                        <h5><strong><a href="#">New design trends</a></strong></h5>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
-                        </p>
-                        <a href="#" class="more">Read more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="span3">
-                <div class="home-post">
-                    <div class="post-image">
-                        <img class="max-img" src="<?=$dist?>img/blog/img2.jpg" alt="" />
-                    </div>
-                    <div class="post-meta">
-                        <i class="icon-file icon-2x"></i>
-                        <span class="date">June 19, 2013</span>
-                        <span class="tags"><a href="#">Design</a>, <a href="#">News</a></span>
-                    </div>
-                    <div class="entry-content">
-                        <h5><strong><a href="#">Retro is great</a></strong></h5>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
-                        </p>
-                        <a href="#" class="more">Read more</a>
+
+            <?php foreach ($blog as $k => $v):  $date = strtotime($v['date'])?>
+
+                <div class="span3">
+                    <div class="home-post">
+                        <div class="post-image" style="max-height: 201px">
+                            <img class="max-img" src="<?=$uploads?>/blog/<?= $v['image'] ?>" alt="" />
+                        </div>
+                        <div class="post-meta">
+                            <i class="icon-file icon-2x"></i>
+                            <span class="date"><?= strftime('%B', $date).' '.date('d', $date).', '.date('Y', $date)  ?></span>
+                            <span class="tags"><a href="#"> <?= str_replace(',', ', ', $v['category']) ?> </a></span>
+                        </div>
+                        <div class="entry-content">
+                            <h5><strong><a href="#"><?= $v['name'] ?></a></strong></h5>
+                            <p>
+                                <?= \yii\helpers\BaseStringHelper::truncate($v['description'], 73, '&hellip;', 'UTF-8') ?>
+                            </p>
+                            <a href="#" class="more">Read more</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="span3">
-                <div class="home-post">
-                    <div class="post-image">
-                        <img class="max-img" src="<?=$dist?>img/blog/img3.jpg" alt="" />
-                    </div>
-                    <div class="post-meta">
-                        <i class="icon-file icon-2x"></i>
-                        <span class="date">June 22, 2013</span>
-                        <span class="tags"><a href="#">Design</a>, <a href="#">Tips</a></span>
-                    </div>
-                    <div class="entry-content">
-                        <h5><strong><a href="#">Isometric mockup</a></strong></h5>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
-                        </p>
-                        <a href="#" class="more">Read more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="span3">
-                <div class="home-post">
-                    <div class="post-image">
-                        <img class="max-img" src="<?=$dist?>img/blog/img4.jpg" alt="" />
-                    </div>
-                    <div class="post-meta">
-                        <i class="icon-file icon-2x"></i>
-                        <span class="date">June 27, 2013</span>
-                        <span class="tags"><a href="#">News</a>, <a href="#">Tutorial</a></span>
-                    </div>
-                    <div class="entry-content">
-                        <h5><strong><a href="#">Free icon set</a></strong></h5>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
-                        </p>
-                        <a href="#" class="more">Read more</a>
-                    </div>
-                </div>
-            </div>
+
+            <?php endforeach; ?>
+
         </div>
         <div class="blankdivider30"></div>
         <div class="aligncenter">
@@ -479,7 +241,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                 <div class="cform" id="contact-form">
                     <div id="sendmessage">Your message has been sent. Thank you!</div>
                     <div id="errormessage"></div>
-                    <form action="" method="post" role="form" class="contactForm">
+                    <form action="site/mail" method="post" role="form" class="contactForm">
                         <div class="row">
                             <div class="span6">
                                 <div class="field your-name form-group">
@@ -495,6 +257,7 @@ $this->title = 'Maxim - Modern One Page Bootstrap Template';
                                     <div class="validation"></div>
                                 </div>
                             </div>
+                            <input type="hidden" name="<?=Yii::$app->request->csrfParam; ?>" value="<?=Yii::$app->request->getCsrfToken(); ?>" />
                             <div class="span6">
                                 <div class="field message form-group">
                                     <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>

@@ -15,6 +15,7 @@ class AppAsset extends AssetBundle
         'css/bootstrap-responsive.css',
         'css/style.css',
         'css/color/default.css',
+        'css/site.css',
     ];
     public $js = [
         'js/jquery.js',

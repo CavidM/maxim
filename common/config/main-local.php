@@ -3,12 +3,12 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=sql12.freemysqlhosting.net;dbname=sql12180018',
-//            'dsn' => 'mysql:host=localhost;dbname=maxim',
-//            'username' => 'root',
-            'username' => 'sql12180018',
-//            'password' => '',
-            'password' => 'mVVzByc6XX',
+//            'dsn' => 'mysql:host=sql12.freemysqlhosting.net;dbname=sql12180018',
+            'dsn' => 'mysql:host=localhost;dbname=maxim',
+            'username' => 'root',
+//            'username' => 'sql12180018',
+            'password' => '',
+//            'password' => 'mVVzByc6XX',
             'charset' => 'utf8',
         ],
         'mailer' => [

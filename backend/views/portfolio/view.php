@@ -30,8 +30,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'image',
-            'category_id',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value' => function($model) {
+
+                    return Html::img($model->memberImage, ['height' => 300]);
+                }
+            ],
+            'category',
         ],
     ]) ?>
 

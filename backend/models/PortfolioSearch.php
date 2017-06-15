@@ -18,7 +18,8 @@ class PortfolioSearch extends Portfolio
     public function rules()
     {
         return [
-            [['id', 'category_id'], 'integer'],
+            [['id'], 'integer'],
+            [['category'], 'string', 'max' => 255],
             [['name', 'image'], 'safe'],
         ];
     }
@@ -60,7 +61,7 @@ class PortfolioSearch extends Portfolio
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'category_id' => $this->category_id,
+            'category' => $this->category,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
