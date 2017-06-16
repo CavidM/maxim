@@ -27,7 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'description',
+            [
+                'attribute' => 'description',
+                'format' => 'raw',
+                'contentOptions' => [
+                        'style' => 'max-width:100px; overflow: hidden',
+                ],
+            ],
             [
                 'attribute' => 'image',
                 'format' => 'raw',

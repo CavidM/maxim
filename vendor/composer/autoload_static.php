@@ -55,6 +55,10 @@ class ComposerStaticIniteeb7f52fb6bd1e711b505511c07b36a8
             'kartik\\alert\\' => 13,
             'kartik\\affix\\' => 13,
         ),
+        'd' => 
+        array (
+            'dosamigos\\tinymce\\' => 18,
+        ),
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
@@ -227,6 +231,10 @@ class ComposerStaticIniteeb7f52fb6bd1e711b505511c07b36a8
         'kartik\\affix\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-affix',
+        ),
+        'dosamigos\\tinymce\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/2amigos/yii2-tinymce-widget/src',
         ),
         'cebe\\markdown\\' => 
         array (

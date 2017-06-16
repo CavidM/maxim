@@ -5,6 +5,7 @@ use backend\models\Blog;
 use backend\models\Category;
 use backend\models\Portfolio;
 use backend\models\Services;
+use backend\models\SliderText;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\helpers\VarDumper;
@@ -86,6 +87,7 @@ class SiteController extends Controller
         $categories = new Category();
         $portfolio = new Portfolio();
         $blog = new Blog();
+        $slider_text = new SliderText();
 
         $team_arr = $team::find()->where(['status' => Status::STATUS_ACTIVE])->limit(5)->asArray()->all();
 
@@ -97,6 +99,8 @@ class SiteController extends Controller
 
         $blog_arr = $blog::find()->where(['status' => Status::STATUS_ACTIVE])->limit(4)->asArray()->all();
 
+        $slider_text_arr = $slider_text::find()->where(['status' => Status::STATUS_ACTIVE])->asArray()->all();
+
         return $this->render('index',[
             'dist' => Yii::$app->request->baseUrl.'/frontend/web/',
             'uploads' => yii::$app->request->baseUrl.'/uploads/',
@@ -105,6 +109,7 @@ class SiteController extends Controller
             'categories_arr' => $categories_arr,
             'portfolio' => $portfolio_arr,
             'blog' => $blog_arr,
+            'slider_text' => $slider_text_arr,
         ]);
     }
 

@@ -29,7 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'name',
+            [
+                'attribute' => 'name',
+                'format' => 'raw',
+            ],
             'profession',
             [
                 'attribute' => 'image',
@@ -39,7 +42,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Html::img($model->memberImage, ['height' => 300]);
                 }
             ],
-            'status',
+            [
+                'attribute' => 'status',
+                'label' => 'status',
+                'value' => function($model) {
+                    return ($model->status) ? yii::t('backend', 'active') : yii::t('backend', 'deleted');
+                },
+            ],
         ],
     ]) ?>
 
