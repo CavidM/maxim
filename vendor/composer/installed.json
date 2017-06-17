@@ -4759,5 +4759,54 @@
             "yii 2",
             "yii2"
         ]
+    },
+    {
+        "name": "sjaakp/yii2-sortable-behavior",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sjaakp/yii2-sortable-behavior.git",
+            "reference": "831e83de6c5d9df386e2e32f3c5253d8b8993028"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sjaakp/yii2-sortable-behavior/zipball/831e83de6c5d9df386e2e32f3c5253d8b8993028",
+            "reference": "831e83de6c5d9df386e2e32f3c5253d8b8993028",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*",
+            "yiisoft/yii2-jui": "*"
+        },
+        "time": "2015-06-18T11:29:36+00:00",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "sjaakp\\sortable\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Sjaak Priester",
+                "email": "sjaak@sjaakpriester.nl",
+                "homepage": "http://sjaakpriester.nl"
+            }
+        ],
+        "description": "Sort ActiveRecords and related records in Yii2.",
+        "keywords": [
+            "Behavior",
+            "extension",
+            "order",
+            "sort",
+            "widget",
+            "yii",
+            "yii2"
+        ]
     }
 ]

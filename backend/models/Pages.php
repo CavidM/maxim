@@ -19,6 +19,15 @@ class Pages extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+    public function behaviors( ) {
+        return [
+            [
+                'class' => 'sjaakp\sortable\Sortable',
+            ],
+        ];
+    }
+
     public static function tableName()
     {
         return 'pages';
@@ -31,7 +40,7 @@ class Pages extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'url'], 'required'],
-//            [['status'], 'integer'],
+            [['status', 'ord'], 'integer'],
             [['name', 'url'], 'string', 'max' => 255],
         ];
     }
@@ -51,16 +60,15 @@ class Pages extends \yii\db\ActiveRecord
 
     public function save($runValidation = true, $attributeNames = null)
     {
+        if($form = Yii::$app->request->post('Pages')) {
 
-        $form = Yii::$app->request->post()['Pages'];
-
-        $this->status = ($form['status']) ? Status::STATUS_ACTIVE : Status::STATUS_DELETED;
-
+            $this->status = ($form['status']) ? Status::STATUS_ACTIVE : Status::STATUS_DELETED;
+        }
         return parent::save($runValidation, $attributeNames);
     }
 
     public function getPages() {
 
-        return self::find()->where(['status' => Status::STATUS_ACTIVE])->asArray()->all();
+        return self::find()->orderBy('ord')->where(['status' => Status::STATUS_ACTIVE])->asArray()->all();
     }
 }

@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Pages;
 use backend\models\PagesSearch;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -52,6 +53,15 @@ class PagesController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    public function actionOrder( )   {
+        $post = Yii::$app->request->post( );
+
+        if (isset( $post['key'], $post['pos'] ))   {
+
+            $this->findModel( $post['key'] )->order( $post['pos'] );
+        }
     }
 
     /**

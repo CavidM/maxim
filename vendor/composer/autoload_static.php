@@ -26,6 +26,10 @@ class ComposerStaticIniteeb7f52fb6bd1e711b505511c07b36a8
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        's' => 
+        array (
+            'sjaakp\\sortable\\' => 16,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -137,6 +141,10 @@ class ComposerStaticIniteeb7f52fb6bd1e711b505511c07b36a8
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'sjaakp\\sortable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sjaakp/yii2-sortable-behavior',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (

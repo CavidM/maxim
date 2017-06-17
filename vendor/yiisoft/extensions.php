@@ -246,4 +246,13 @@ return array (
       '@dosamigos/tinymce' => $vendorDir . '/2amigos/yii2-tinymce-widget/src',
     ),
   ),
+  'sjaakp/yii2-sortable-behavior' => 
+  array (
+    'name' => 'sjaakp/yii2-sortable-behavior',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@sjaakp/sortable' => $vendorDir . '/sjaakp/yii2-sortable-behavior',
+    ),
+  ),
 );
