@@ -113,7 +113,8 @@ class TeamController extends Controller
     {
         $model = $this->findModel($id);
 
-        unlink(yii::getAlias('@root').'/uploads/team/'.$model->image);
+        if($model->image)
+            unlink(yii::getAlias('@root').'/uploads/team/'.$model->image);
 
         $model->delete();
 

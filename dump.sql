@@ -87,27 +87,6 @@ INSERT INTO `category` (`id`, `name`) VALUES
 (5, 'Photography');
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `migration`
---
-
-CREATE TABLE `migration` (
-  `version` varchar(180) NOT NULL,
-  `apply_time` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `migration`
---
-
-INSERT INTO `migration` (`version`, `apply_time`) VALUES
-('m000000_000000_base', 1497362567),
-('m130524_201442_init', 1497362572),
-('m170617_090705_pages', 1497690467);
-
--- --------------------------------------------------------
-
 --
 -- Table structure for table `pages`
 --
@@ -373,3 +352,17 @@ ALTER TABLE `user`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE `migration` (
+  `version` varchar(180) NOT NULL,
+  `apply_time` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `migration`
+--
+
+INSERT INTO `migration` (`version`, `apply_time`) VALUES
+('m000000_000000_base', 1497362567),
+('m130524_201442_init', 1497362572),
+('m170617_090705_pages', 1497690467);

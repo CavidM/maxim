@@ -113,7 +113,8 @@ class BlogController extends Controller
     {
         $model = $this->findModel($id);
 
-        unlink(yii::getAlias('@root').'/uploads/blog/'.$model->image);
+        if($model->image)
+            unlink(yii::getAlias('@root').'/uploads/blog/'.$model->image);
 
         $model->delete();
 

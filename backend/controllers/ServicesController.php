@@ -113,7 +113,8 @@ class ServicesController extends Controller
     {
         $model = $this->findModel($id);
 
-        unlink(yii::getAlias('@root').'/uploads/services/'.$model->image);
+        if($model->image)
+            unlink(yii::getAlias('@root').'/uploads/services/'.$model->image);
 
         $model->delete();
 
